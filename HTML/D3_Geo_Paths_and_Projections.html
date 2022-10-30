@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="description" content="Data Visualisation" />
+		<meta name="keywords" content="HTML, CSS, D3" />
+		<meta name="author" content="Bernard Joshua" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="../CSS/style.css" />
+		<script src="//d3js.org/d3.v7.min.js"></script>
+
+		<title>Task 8.1 Geo Paths and Projections</title>
+	</head>
+	<body>
+		<h1>Geo Paths and Projections in D3</h1>
+		<script>
+
+			var w = 500;
+			var h = 300;
+			var projection = d3
+				.geoMercator()
+				.center([145, -36.5])
+				.translate([w / 2, h / 2])
+				.scale(2450);
+
+			var path = d3.geoPath().projection(projection);
+
+			var svg = d3
+				.select("body")
+				.append("svg")
+				.attr("width", w)
+				.attr("height", h)
+				.attr("fill", "grey");
+
+			d3.json("../Source/LGA_VIC.json").then(function (json) {
+				svg.selectAll("path")
+					.data(json.features)
+					.enter()
+					.append("path")
+					.attr("d", path);
+			});
+
+		</script>
+
+		<br />
+		<br />
+		<footer>
+			<p>Bernard Joshua Raja Rajan</p>
+			<p>COS30045 Data Visualisation</p>
+			<a href="D3_Choropleths.html"> Go To: Lab 8.2</a>
+		</footer>
+	</body>
+</html>

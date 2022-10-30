@@ -1,0 +1,50 @@
+body {
+	margin: 25px 50px 75px 100px;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1,
+h2 {
+	color: #383838;
+}
+
+p {
+	text-align: justify;
+}
+
+button {
+	font-size: 14px;
+	color: white;
+	padding: 5px 10px;
+	border: none;
+	border-radius: 5px;
+	transition-duration: 0.4s;
+}
+
+button:hover {
+	background-color: #4169e1;
+}
+
+.btn_1 {
+	background-color: #ffa500;
+}
+
+.btn_2 {
+	background-color: #e33cc7;
+}
+
+.btn_3 {
+	background-color: #f54d28;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	color: hotpink;
+}
+
+footer {
+	margin-top: 5%;
+}
